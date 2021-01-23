@@ -1,10 +1,6 @@
-import Transaction from '../models/Transaction';
+import { EntityRepository, Repository } from 'typeorm';
 
-interface TransactionDTO {
-  title: string;
-  type: 'income' | 'outcome';
-  value: number;
-}
+import Transaction from '../models/Transaction';
 
 interface Balance {
   income: number;
@@ -12,49 +8,40 @@ interface Balance {
   total: number;
 }
 
-class TransactionsRepository {
-  private transactions: Transaction[];
+@EntityRepository(Transaction)
+class TransactionsRepository extends Repository<Transaction> {
+  public async getBalance(): Promise<Balance> {
+    const transactions = await this.find();
 
-  constructor() {
-    this.transactions = [];
-  }
+    const balance = transactions.reduce(
+      (accumulator, transaction) => {
+        switch (transaction.type) {
+          case 'income':
+            accumulator.income += Number(transaction.value);
+            break;
 
-  public all(): Transaction[] {
-    return this.transactions;
-  }
+          case 'outcome':
+            accumulator.outcome += Number(transaction.value);
+            break;
 
-  public getBalance(): Balance {
-    const income = this.transactions.reduce(
-      (sum: number, current: Transaction) => {
-        if (current.type === 'income') return sum + current.value;
-        return sum;
+          default:
+            break;
+        }
+
+        return accumulator;
       },
-      0,
+      {
+        income: 0,
+        outcome: 0,
+        total: 0,
+      },
     );
 
-    const outcome = this.transactions.reduce(
-      (sum: number, current: Transaction) => {
-        if (current.type === 'outcome') return sum + current.value;
-        return sum;
-      },
-      0,
-    );
-
-    const balance = {
-      income,
-      outcome,
-      total: income - outcome,
+    return {
+      income: balance.income,
+      outcome: balance.outcome,
+      total: balance.income - balance.outcome,
     };
-
-    return balance;
-  }
-
-  public create({ title, value, type }: TransactionDTO): Transaction {
-    const transaction = new Transaction({ title, value, type });
-
-    this.transactions.push(transaction);
-
-    return transaction;
   }
 }
 

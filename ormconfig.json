@@ -1,0 +1,17 @@
+{
+  "type": "mysql",
+  "host": "10.0.0.104",
+  "port": 3306,
+  "username": "root",
+  "password": "root",
+  "database": "gostack_financas",
+  "entities": [
+    "./src/models/*.ts"
+  ],
+  "migrations": [
+    "./src/database/migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "./src/database/migrations"
+  }
+}
