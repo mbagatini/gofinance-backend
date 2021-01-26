@@ -6,7 +6,13 @@ export default class CreateCategory1610912792641 implements MigrationInterface {
       new Table({
         name: 'category',
         columns: [
-          { name: 'id', type: 'varchar', isPrimary: true },
+          {
+            name: 'id',
+            type: 'varchar',
+            isPrimary: true,
+            generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
+          },
           { name: 'title', type: 'varchar' },
           {
             name: 'created_at',

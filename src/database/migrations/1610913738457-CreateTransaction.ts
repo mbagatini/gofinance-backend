@@ -12,7 +12,13 @@ export default class CreateTransaction1610913738457
       new Table({
         name: 'transaction',
         columns: [
-          { name: 'id', type: 'varchar', isPrimary: true },
+          {
+            name: 'id',
+            type: 'varchar',
+            isPrimary: true,
+            generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
+          },
           { name: 'title', type: 'varchar' },
           { name: 'value', type: 'decimal(10,2)' },
           { name: 'type', type: 'varchar' },
