@@ -1,5 +1,9 @@
 <img alt="GoStack" src="https://storage.googleapis.com/golden-wind/bootcamp-gostack/header-desafios-new.png" />
 
+<h3 align="center">
+  GoFinances Backend
+</h3>
+
 <blockquote align="center">“Para quem fica melhor a cada dia, ficar pronto é utopia”!</blockquote>
 
 <p align="center">
@@ -10,25 +14,15 @@
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
-
-  <a href="https://github.com/Rocketseat/bootcamp-gostack-desafios/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/rocketseat/bootcamp-gostack-desafios?style=social">
-  </a>
 </p>
 
+<img alt="GoFinance" src="./src/assets/capa.png" />
 
-## :rocket: Sobre o desafio
+## :rocket: Sobre a GoFinance
 
-Essa será uma aplicação para armazenar transações financeiras de entrada e saída, que deve permitir o cadastro e a listagem dessas transações.
+Essa é uma aplicação para armazenar transações financeiras de entrada e saída, que permite o cadastro e a listagem dessas transações.
 
-### Template da aplicação
-
-Para te ajudar nesse desafio, criamos para você um modelo que você deve utilizar como um template do Github.
-
-O template está disponível na seguinte url: **[Acessar Template](https://github.com/Rocketseat/gostack-template-fundamentos-node)**
-
-
-Agora navegue até a pasta criada e abra no Visual Studio Code, lembre-se de executar o comando `yarn` no seu terminal para instalar todas as dependências.
+O objetivo deste repositório é prover uma API, construída em em Node.js, que será consumida pela aplicação [front-end](https://github.com/mbagatini/gofinance).
 
 ### Rotas da aplicação
 
@@ -120,6 +114,3 @@ Agora que você já está com o template clonado e pronto para continuar, você 
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
 
----
-
-Feito com 💜 by Rocketseat :wave: [Entre na nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
