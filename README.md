@@ -1,7 +1,7 @@
 <img alt="GoStack" src="https://storage.googleapis.com/golden-wind/bootcamp-gostack/header-desafios-new.png" />
 
 <h3 align="center">
-  GoFinances Backend
+  Desafio 06: GoFinances Backend
 </h3>
 
 <blockquote align="center">“Para quem fica melhor a cada dia, ficar pronto é utopia”!</blockquote>
